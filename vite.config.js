@@ -17,8 +17,10 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/css/diceroller.css',
+                'resources/css/donatebar.css',
                 'resources/js/app.js',
-                'resources/js/diceroller.js'
+                'resources/js/diceroller.js',
+                'resources/js/kofi.js',
             ],
             refresh: true,
         }),

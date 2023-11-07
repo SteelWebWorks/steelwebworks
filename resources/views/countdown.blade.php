@@ -7,5 +7,4 @@
         <img data-number="2" src="{{ asset('images/numbers/number_0.png') }}" alt="">
         <img data-number="3" src="{{ asset('images/numbers/number_0.png') }}" alt="">
     </div>
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
 @endsection

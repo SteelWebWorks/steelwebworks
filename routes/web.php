@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KofiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,16 @@ Route::get("/chat", function () {
 Route::get("/diceroller", function () {
     return view('diceroller');
 })->name('diceroller');
+
+Route::prefix('kofi')->group(function () {
+    Route::controller(KofiController::class)->group(function () {
+        Route::get("/donatebar", 'donateBar')->name('donatebar');
+        Route::get("/getdonategoal", 'getDonateGoal')->name('getdonategoal');
+
+        Route::get("/setdonategoal", function () {
+            return view("setdonategoal");
+        })->name('setDonateGoal');
+        Route::post("/setdonategoal", 'setDonateGoal')->name('setdonategoal');
+        Route::post("/savedonate", 'saveDonate')->name('savedonate');
+    });
+});

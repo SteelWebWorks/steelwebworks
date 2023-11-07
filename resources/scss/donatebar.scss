@@ -1,0 +1,26 @@
+.donatebar-filler {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(22, 121, 9, 1) 50%, rgb(23, 197, 14) 100%);
+    border-radius: 16px;
+}
+
+.donatebar-glass {
+    //background: rgba(255, 255, 255, 0.3);
+    background: rgb(0, 0, 0, 0.3);
+    background: radial-gradient(circle, rgba(100, 100, 100, 0.3) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.3) 100%);
+    border-radius: 16px;
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.donatebar-text {
+    align-items: center;
+    font-family: 'Steamwreck';
+    background: linear-gradient(90deg, #c49c58 25%, #47331c 100%);
+    background: -moz-linear-gradient(90deg, #c49c58 25%, #47331c 100%);
+    background: -webkit-linear-gradient(90deg, #c49c58 25%, #47331c 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

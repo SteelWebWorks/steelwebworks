@@ -174,7 +174,7 @@ function dice_initialize(container) {
         if (params.challenger) {
             action = "4e79f44a-48ea-4ee3-9adc-d0c57b74f6f7";
         }
-        var response = client.doAction(action, {
+        var response = streamerbotClient.doAction(action, {
             'number': res,
         })
         console.log(response);
