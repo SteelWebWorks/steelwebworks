@@ -35,7 +35,7 @@ const initBar = function () {
 const setBarData = function (data) {
     var filler = $(".donatebar-filler"),
         name = $(".donatebar-text > #name"),
-        ammount = $(".donatebar-text > #ammount"),
+        ammount = $(".donatebar-text > #amount"),
         goal = $(".donatebar-text > #goal");
 
     name.html(data.name);
@@ -43,9 +43,5 @@ const setBarData = function (data) {
     goal.html(data.goal);
     filler.css("width", data.percentige);
 }
-
-$(() => {
-    initBar();
-});
 
 

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class KofiController extends Controller
 {
+
     public function setDonateGoal(Request $request)
     {
 
@@ -40,6 +41,12 @@ class KofiController extends Controller
 
         $data = json_decode(Storage::disk('local')->get('donate.json'));
 
+        $remaining = $data->goal - $data->amount;
+
+        if ($amount > $remaining) {
+            $amount = $remaining;
+        }
+
         $data->amount += $amount;
         $data->percentige = round(($data->amount / $data->goal) * 100);
         $success = Storage::disk('local')->put('donate.json', json_encode($data));
@@ -66,7 +73,9 @@ class KofiController extends Controller
 
     public function donateBar()
     {
-        $data = json_decode(Storage::disk('local')->get('donate.json'));
-        return view('donatebar')->with(compact('data'));
+        $data = json_decode(Storage::disk('local')->get('donate.json'), true);
+        return view('donatebar')->with([
+            'data' => $data,
+        ]);
     }
 }
